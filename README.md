@@ -78,9 +78,11 @@ Filled:
 
 Current placeholders:
 
-* `support/index.html` — GitHub Sponsors URL.
-* `privacy/index.html` — `[PLACEHOLDER: contact email]`.
-* `support/index.html` — `[PLACEHOLDER: contact email]`.
+* `support/index.html` — GitHub Sponsors URL (hold until Sarel confirms approval; candidate `github.com/sponsors/BokyApps`).
+
+Contact is GitHub-only (no public email): open an issue under
+[github.com/BokyApps](https://github.com/BokyApps); for private/security reports use
+repository private vulnerability reporting / security advisories when enabled.
 
 They are styled with `.placeholder` (dashed border) and `.tag-placeholder`, and are
 announced as placeholders on the page so nobody mistakes one for a live address.
