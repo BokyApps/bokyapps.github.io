@@ -76,9 +76,11 @@ Filled:
 * `support/index.html` — ETH/USDC on Base: `0xC8F53137c521F27Ff9a1D82EA8508B1c59f2EF84`
 * `support/index.html` — SOL/SPL on Solana: `4EsZgfctQ45y7JX4gsNaRDkGs6MVXVMSUNwJFBzvgUNP`
 
-Current placeholders:
+Hidden (HTML comments, not shown publicly):
 
-* `support/index.html` — GitHub Sponsors URL (hold until Sarel confirms approval; candidate `github.com/sponsors/BokyApps`).
+* `support/index.html` — GitHub Sponsors slot (re-enable when Sarel confirms; candidate `github.com/sponsors/BokyApps`).
+
+Public support methods: Ko-fi, BTC, Base ETH/USDC, Solana. Lightning and Monero removed.
 
 Contact is GitHub-only (no public email): open an issue under
 [github.com/BokyApps](https://github.com/BokyApps); for private/security reports use
