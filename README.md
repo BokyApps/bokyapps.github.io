@@ -72,12 +72,13 @@ into this repository. Fill in a real value, or leave the placeholder.
 Filled:
 
 * `support/index.html` — Ko-fi: https://ko-fi.com/bokyapps
+* `support/index.html` — BTC (native SegWit): `bc1qfukuse3r0uhf6gc5zkpyxaf0snqwejrc5w9j4j`
 * `support/index.html` — ETH/USDC on Base: `0xC8F53137c521F27Ff9a1D82EA8508B1c59f2EF84`
 * `support/index.html` — SOL/SPL on Solana: `4EsZgfctQ45y7JX4gsNaRDkGs6MVXVMSUNwJFBzvgUNP`
 
 Current placeholders:
 
-* `support/index.html` — GitHub Sponsors URL, BTC address,
+* `support/index.html` — GitHub Sponsors URL,
   Lightning address or LNURL, XMR address.
 * `privacy/index.html` — `[PLACEHOLDER: contact email]`.
 * `support/index.html` — `[PLACEHOLDER: contact email]`.

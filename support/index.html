@@ -57,7 +57,7 @@
       <p class="small">
         Some donation details below are still marked
         <span class="tag-placeholder">placeholder</span>. Please do not send funds to a
-        placeholder. Ko-fi, Base (ETH/USDC), and Solana are live; the rest will be
+        placeholder. Ko-fi, Bitcoin, Base (ETH/USDC), and Solana are live; the rest will be
         filled in as each option is set up.
       </p>
     </div>
@@ -78,9 +78,18 @@
       </div>
 
       <div class="support-item">
-        <h3>Bitcoin<span class="tag-placeholder">placeholder</span></h3>
-        <p>On-chain BTC. <em>Verify before sending</em> &mdash; clipboard-hijacking malware targets donation pages.</p>
-        <span class="placeholder">[PLACEHOLDER: BTC address]</span>
+        <h3>Bitcoin</h3>
+        <p>
+          On-chain <strong>BTC only</strong> (native SegWit). Do <strong>not</strong> send
+          other coins or tokens to this address &mdash; funds sent the wrong way can be lost.
+          <em>Verify the address before sending</em> &mdash; clipboard-hijacking malware
+          targets donation pages.
+        </p>
+        <div class="addr-row">
+          <code class="addr" id="btc-addr">bc1qfukuse3r0uhf6gc5zkpyxaf0snqwejrc5w9j4j</code>
+          <button type="button" class="copy-btn" data-copy-target="btc-addr" data-copy-status="btc-copy-status">Copy</button>
+        </div>
+        <p class="small" id="btc-copy-status" aria-live="polite"></p>
       </div>
 
       <div class="support-item">
