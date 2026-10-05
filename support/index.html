@@ -57,7 +57,8 @@
       <p class="small">
         Some donation details below are still marked
         <span class="tag-placeholder">placeholder</span>. Please do not send funds to a
-        placeholder. Ko-fi is live; the rest will be filled in as each option is set up.
+        placeholder. Ko-fi, Base (ETH/USDC), and Solana are live; the rest will be
+        filled in as each option is set up.
       </p>
     </div>
 
@@ -95,9 +96,35 @@
       </div>
 
       <div class="support-item">
-        <h3>Ethereum / USDC<span class="tag-placeholder">placeholder</span></h3>
-        <p>Native ETH and USD-pegged stablecoin, if you prefer them.</p>
-        <span class="placeholder">[PLACEHOLDER: address]</span>
+        <h3>ETH / USDC on Base</h3>
+        <p>
+          Send <strong>ETH or USDC on the Base network only</strong> (Trust Wallet).
+          Do <strong>not</strong> send from Ethereum mainnet, other L2s, or other chains
+          &mdash; funds sent on the wrong network can be lost.
+          <em>Verify the address before sending</em> &mdash; clipboard-hijacking malware
+          targets donation pages.
+        </p>
+        <div class="addr-row">
+          <code class="addr" id="base-addr">0xC8F53137c521F27Ff9a1D82EA8508B1c59f2EF84</code>
+          <button type="button" class="copy-btn" data-copy-target="base-addr" data-copy-status="base-copy-status">Copy</button>
+        </div>
+        <p class="small" id="base-copy-status" aria-live="polite"></p>
+      </div>
+
+      <div class="support-item">
+        <h3>SOL / SPL on Solana</h3>
+        <p>
+          Send <strong>SOL or SPL tokens on the Solana network only</strong>.
+          Do <strong>not</strong> send from other chains &mdash; funds sent on the
+          wrong network can be lost.
+          <em>Verify the address before sending</em> &mdash; clipboard-hijacking malware
+          targets donation pages.
+        </p>
+        <div class="addr-row">
+          <code class="addr" id="sol-addr">4EsZgfctQ45y7JX4gsNaRDkGs6MVXVMSUNwJFBzvgUNP</code>
+          <button type="button" class="copy-btn" data-copy-target="sol-addr" data-copy-status="sol-copy-status">Copy</button>
+        </div>
+        <p class="small" id="sol-copy-status" aria-live="polite"></p>
       </div>
     </div>
 
@@ -153,5 +180,50 @@
 </footer>
 
 </div>
+
+<script>
+(function () {
+  function setStatus(el, msg) {
+    if (el) el.textContent = msg || "";
+  }
+  document.querySelectorAll(".copy-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.getAttribute("data-copy-target");
+      var target = id ? document.getElementById(id) : null;
+      var statusId = btn.getAttribute("data-copy-status");
+      var status = statusId ? document.getElementById(statusId) : null;
+      if (!target) return;
+      var value = target.textContent.trim();
+      function ok() {
+        setStatus(status, "Copied.");
+        btn.textContent = "Copied";
+        window.setTimeout(function () {
+          btn.textContent = "Copy";
+          setStatus(status, "");
+        }, 1600);
+      }
+      function fail() {
+        setStatus(status, "Copy failed — select the address manually.");
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(ok).catch(fail);
+      } else {
+        var range = document.createRange();
+        range.selectNodeContents(target);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try {
+          if (document.execCommand("copy")) ok();
+          else fail();
+        } catch (e) {
+          fail();
+        }
+        sel.removeAllRanges();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
