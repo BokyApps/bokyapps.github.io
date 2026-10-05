@@ -78,8 +78,7 @@ Filled:
 
 Current placeholders:
 
-* `support/index.html` — GitHub Sponsors URL,
-  Lightning address or LNURL, XMR address.
+* `support/index.html` — GitHub Sponsors URL.
 * `privacy/index.html` — `[PLACEHOLDER: contact email]`.
 * `support/index.html` — `[PLACEHOLDER: contact email]`.
 
