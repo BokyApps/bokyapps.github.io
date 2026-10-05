@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BokyLearn — fun-fact doom-scrolling learning app</title>
+<meta name="description" content="BokyLearn is a Flutter learning app with a short-facts feed, bring-your-own-key AI expansions and follow-ups, bookmarks and interest filters. No analytics.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="page">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b0f14"/>
+        <g fill="none" stroke="#5fd3c9" stroke-width="5" stroke-linecap="round">
+          <path d="M22 24V16h10"/><path d="M42 40v8H32"/>
+        </g>
+        <rect x="23" y="24" width="18" height="18" rx="4" fill="#5fd3c9"/>
+        <rect x="29" y="30" width="6" height="6" rx="1.5" fill="#0b0f14"/>
+      </svg>
+      <span>BokyApps</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#apps" aria-current="page">Apps</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <p class="small"><a href="/#apps">&larr; All Boky apps</a></p>
+
+    <h1>BokyLearn</h1>
+    <p class="lede">Fun-fact doom-scrolling learning app.</p>
+    <p>
+      <span class="pill pill-accent">Bring your own key</span>
+      <span class="pill">Android</span>
+      <span class="pill">Flutter</span>
+    </p>
+
+    <p>
+      BokyLearn turns idle scrolling into something. It shows you short facts, one card at
+      a time. When a fact interests you, you can ask for a longer expansion or a follow-up
+      question — answered by whichever AI provider you configured, with your own API key.
+      Bookmark what you like and filter the feed towards what you actually want to read.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/sarel-myburgh/bokylearn" rel="noopener">Source code</a>
+      <a class="btn" href="https://github.com/sarel-myburgh/bokylearn/releases" rel="noopener">Releases</a>
+      <a class="btn" href="/privacy/#bokylearn">Privacy policy</a>
+    </div>
+
+    <nav class="appnav" aria-label="Boky apps">
+      <h2>Boky apps</h2>
+      <ul>
+        <li><a href="/apps/bokyqr/">BokyQR</a></li>
+        <li><a href="/apps/bokylearn/" aria-current="page">BokyLearn</a></li>
+        <li><a href="/apps/bokydo/">BokyDo</a></li>
+        <li><a href="/apps/bokydojo/">BokyDojo</a></li>
+      </ul>
+    </nav>
+
+    <h2>Features</h2>
+    <ul class="checklist">
+      <li><strong>Short-fact feed.</strong> A steady stream of compact, genuinely interesting facts rather than an infinite content treadmill.</li>
+      <li><strong>Bring-your-own-key AI.</strong> Expansions and follow-ups go to the provider you chose — OpenAI, OpenRouter, Anthropic, Gemini, Ollama (cloud or local), or OpenCode Go. No Boky proxy, no shared key, no billing through us.</li>
+      <li><strong>Monthly fact cache.</strong> A refresh of the fact set keeps the feed fresh without hammering any service every time you open the app.</li>
+      <li><strong>Interest filters.</strong> Nudge the feed towards the subjects you care about, and bookmark the ones worth keeping.</li>
+      <li><strong>Mature-content preference.</strong> A setting you control, so the feed can stay suitable for the situation you are in.</li>
+      <li><strong>Wikipedia grounding.</strong> Where available, expansions are grounded in encyclopedia references rather than pure model recall.</li>
+      <li><strong>Secure key storage.</strong> API keys are held in the platform's secure storage (Keystore-backed on Android), not in plain preferences.</li>
+      <li><strong>No Boky analytics.</strong> Your reading habits are not our business.</li>
+    </ul>
+
+    <h2>Your data</h2>
+    <p>
+      API keys are stored in the platform's secure storage. Cached facts and your
+      bookmarks live locally on the device. When you ask for an expansion, the request
+      goes to the AI provider <em>you</em> selected, authenticated with <em>your</em> key —
+      which means that provider's own privacy policy applies to that request, not ours.
+      BokyApps runs no analytics service and receives no copy of it.
+    </p>
+
+    <h2>Downloads</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Source</th><th scope="col">Status</th><th scope="col">Link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Source code</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/bokylearn" rel="noopener">github.com/sarel-myburgh/bokylearn</a></td></tr>
+          <tr><td>Releases</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/bokylearn/releases" rel="noopener">github.com/sarel-myburgh/bokylearn/releases</a></td></tr>
+          <tr><td>F-Droid</td><td>Coming soon</td><td class="muted">No listing yet.</td></tr>
+          <tr><td>Google Play</td><td>Coming soon</td><td class="muted">No listing yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Licence</h2>
+    <p>
+      BokyLearn does not currently declare a licence file in its repository, so no licence
+      is claimed here. <em>See the repository</em> for the current state of its licensing —
+      if that is unclear, treat the code as all rights reserved until the repository says
+      otherwise.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>BokyApps &middot; <a href="https://github.com/sarel-myburgh/bokylearn" rel="noopener">BokyLearn source</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/support/">Support</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

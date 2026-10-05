@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BokyQR — Android QR scanner. Bring your own key.</title>
+<meta name="description" content="BokyQR is an offline-first Android QR and barcode scanner. Camera frames are decoded on-device, optional VirusTotal/urlscan.io/URLhaus checks run only when you tap them, and it ships with no analytics.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="page">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b0f14"/>
+        <g fill="none" stroke="#5fd3c9" stroke-width="5" stroke-linecap="round">
+          <path d="M22 24V16h10"/><path d="M42 40v8H32"/>
+        </g>
+        <rect x="23" y="24" width="18" height="18" rx="4" fill="#5fd3c9"/>
+        <rect x="29" y="30" width="6" height="6" rx="1.5" fill="#0b0f14"/>
+      </svg>
+      <span>BokyApps</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#apps" aria-current="page">Apps</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <p class="small"><a href="/#apps">&larr; All Boky apps</a></p>
+
+    <h1>BokyQR</h1>
+    <p class="lede">Android QR scanner. Bring your own key.</p>
+    <p>
+      <span class="pill pill-accent">Offline-first</span>
+      <span class="pill">Android</span>
+      <span class="pill">Apache-2.0</span>
+    </p>
+
+    <p>
+      BokyQR is an offline-first QR and barcode scanner for Android. Camera frames are
+      decoded <strong>on the device</strong> — nothing is stored, uploaded or logged by
+      default. If you want to know whether a scanned URL is dangerous, you can hand that
+      URL to a reputation service yourself, using an API key you supply. Each check tells
+      you exactly what it is about to send before it sends it.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/sarel-myburgh/BokyQR" rel="noopener">Source code</a>
+      <a class="btn" href="https://github.com/sarel-myburgh/BokyQR/releases" rel="noopener">Releases &amp; downloads</a>
+      <a class="btn" href="/privacy/#bokyqr">Privacy policy</a>
+    </div>
+
+    <nav class="appnav" aria-label="Boky apps">
+      <h2>Boky apps</h2>
+      <ul>
+        <li><a href="/apps/bokyqr/" aria-current="page">BokyQR</a></li>
+        <li><a href="/apps/bokylearn/">BokyLearn</a></li>
+        <li><a href="/apps/bokydo/">BokyDo</a></li>
+        <li><a href="/apps/bokydojo/">BokyDojo</a></li>
+      </ul>
+    </nav>
+
+    <h2>Features</h2>
+    <ul class="checklist">
+      <li><strong>On-device decoding.</strong> The barcode model runs locally: the Play flavour bundles ML Kit inside the APK, the F-Droid flavour uses ZXing. Either way it is pure on-device computation.</li>
+      <li><strong>Gallery import, without a media permission.</strong> Import a QR from a photo through the Android system photo picker. The app reads only the single image you pick and requests no photo, media or storage permission.</li>
+      <li><strong>Safe link opening.</strong> Scanned <code>http</code> and <code>https</code> URLs can be opened in your default browser, with the destination shown before you go there.</li>
+      <li><strong>Passkey QR handoff.</strong> Move a passkey between devices using the QR handoff flow.</li>
+      <li><strong>Optional BYOK reputation checks.</strong> Tap a provider to check a URL against VirusTotal, urlscan.io or URLhaus. Each one requires your own API key, is disclosed before the first send, and never runs in the background.</li>
+      <li><strong><code>FLAG_SECURE</code>.</strong> Settings and the result sheet are protected from screenshots, screen recordings and the recent-apps thumbnail.</li>
+      <li><strong>No analytics.</strong> No telemetry, no crash reporter, no advertising identifiers.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>The only permissions BokyQR declares.</caption>
+        <thead>
+          <tr><th scope="col">Permission</th><th scope="col">Why</th><th scope="col">When</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CAMERA</code></td>
+            <td>To scan a QR or barcode.</td>
+            <td>Requested once, on first launch. Nothing else uses it.</td>
+          </tr>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>To reach the reputation APIs you choose to query.</td>
+            <td>Only while a check you started is running.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">
+      No photo, media, storage, location, contacts, microphone or advertising identifier
+      is requested. No identifier of any kind is collected.
+    </p>
+
+    <h2>How reputation checks work</h2>
+    <p>
+      BokyQR ships no key. There is no shared key, no proxy and no demo key — the
+      reputation providers do not work until you paste in your own API key. Keys you add
+      in Settings are stored in <code>EncryptedSharedPreferences</code>, encrypted with an
+      <code>AES256_GCM</code> master key held in the Android Keystore, and are excluded from
+      cloud backup and device-to-device transfer.
+    </p>
+    <p>
+      A check never runs on scan, on app start, or on a schedule. It runs when you tap
+      that provider's button. See the
+      <a href="/privacy/#bokyqr">BokyQR section of the privacy policy</a> for exactly what
+      each provider receives.
+    </p>
+
+    <h2>Downloads</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Source</th><th scope="col">Status</th><th scope="col">Link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Source code</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/BokyQR" rel="noopener">github.com/sarel-myburgh/BokyQR</a></td></tr>
+          <tr><td>Releases (APK)</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/BokyQR/releases" rel="noopener">github.com/sarel-myburgh/BokyQR/releases</a></td></tr>
+          <tr><td>F-Droid</td><td>Coming soon</td><td class="muted">No listing yet.</td></tr>
+          <tr><td>Google Play</td><td>Coming soon</td><td class="muted">No listing yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Licence</h2>
+    <p>
+      BokyQR is released under the
+      <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License 2.0</a>.
+      You can read, build, audit and redistribute it.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>BokyApps &middot; <a href="https://github.com/sarel-myburgh/BokyQR" rel="noopener">BokyQR source</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/support/">Support</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

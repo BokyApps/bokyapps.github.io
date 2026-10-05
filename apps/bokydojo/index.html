@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BokyDojo — Student Information System for dojos and martial arts clubs</title>
+<meta name="description" content="BokyDojo is a self-hostable Student Information System for dojos and martial arts clubs: multi-dojo attendance, ranking, scheduling, billing and a parent portal.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="page">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b0f14"/>
+        <g fill="none" stroke="#5fd3c9" stroke-width="5" stroke-linecap="round">
+          <path d="M22 24V16h10"/><path d="M42 40v8H32"/>
+        </g>
+        <rect x="23" y="24" width="18" height="18" rx="4" fill="#5fd3c9"/>
+        <rect x="29" y="30" width="6" height="6" rx="1.5" fill="#0b0f14"/>
+      </svg>
+      <span>BokyApps</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#apps" aria-current="page">Apps</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <p class="small"><a href="/#apps">&larr; All Boky apps</a></p>
+
+    <h1>BokyDojo</h1>
+    <p class="lede">Student Information System for dojos and martial arts clubs.</p>
+    <p>
+      <span class="pill pill-accent">Self-hosted</span>
+      <span class="pill">AGPL-3.0</span>
+    </p>
+
+    <p>
+      BokyDojo is a Student Information System built for martial arts schools. It handles
+      multi-dojo roll-up: attendance, ranking and grading, class scheduling, billing, and a
+      parent portal. Self-host it with Docker today; a managed SaaS offering is a
+      long-term goal, not the current shape of the project.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/sarel-myburgh/BokyDojo" rel="noopener">Source code</a>
+      <a class="btn" href="https://github.com/sarel-myburgh/BokyDojo/releases" rel="noopener">Releases</a>
+      <a class="btn" href="/privacy/#bokydojo">Privacy policy</a>
+    </div>
+
+    <nav class="appnav" aria-label="Boky apps">
+      <h2>Boky apps</h2>
+      <ul>
+        <li><a href="/apps/bokyqr/">BokyQR</a></li>
+        <li><a href="/apps/bokylearn/">BokyLearn</a></li>
+        <li><a href="/apps/bokydo/">BokyDo</a></li>
+        <li><a href="/apps/bokydojo/" aria-current="page">BokyDojo</a></li>
+      </ul>
+    </nav>
+
+    <h2>Features</h2>
+    <ul class="checklist">
+      <li><strong>Attendance.</strong> Class check-in, rosters and attendance history. The PWA keeps an offline attendance queue so a dropped connection mid-class does not lose your data.</li>
+      <li><strong>Ranking and grading.</strong> Rank structure, promotion criteria and progress towards the next grade.</li>
+      <li><strong>Scheduling.</strong> Timetables per dojo, with instructor and room assignments.</li>
+      <li><strong>Billing.</strong> Memberships, invoicing and payment status alongside student records.</li>
+      <li><strong>Parent portal.</strong> Parents see their own children's attendance, rank and invoices &mdash; and nothing else.</li>
+      <li><strong>Multi-dojo roll-up.</strong> One operator running several clubs sees them in one place.</li>
+    </ul>
+
+    <h2>Built with</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Layer</th><th scope="col">Technology</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Application</td><td>Django 5 with Django REST Framework</td></tr>
+          <tr><td>Database</td><td>PostgreSQL</td></tr>
+          <tr><td>Front end</td><td>HTMX, Alpine.js, Tailwind CSS</td></tr>
+          <tr><td>Offline</td><td>Progressive Web App with an offline attendance queue</td></tr>
+          <tr><td>Background jobs</td><td>Celery with Redis</td></tr>
+          <tr><td>Deployment</td><td>Docker Compose with Caddy as the reverse proxy</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Your data</h2>
+    <p>
+      BokyDojo is self-hosted. Student and parent records stay on the instance operated by
+      the club or organisation running it. BokyApps operates no cloud copy and no analytics.
+      Note that student information is sensitive personal data: if you operate an instance,
+      securing and backing it up is your responsibility as the operator.
+    </p>
+
+    <h2>Downloads and access</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Source</th><th scope="col">Status</th><th scope="col">Link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Source code</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/BokyDojo" rel="noopener">github.com/sarel-myburgh/BokyDojo</a></td></tr>
+          <tr><td>Releases</td><td>Public</td><td><a href="https://github.com/sarel-myburgh/BokyDojo/releases" rel="noopener">github.com/sarel-myburgh/BokyDojo/releases</a></td></tr>
+          <tr><td>App stores</td><td>Not applicable</td><td class="muted">BokyDojo is a self-hosted web app accessed through a browser.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Licence</h2>
+    <p>
+      BokyDojo is released under the
+      <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">GNU Affero General Public License v3.0</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>BokyApps &middot; <a href="https://github.com/sarel-myburgh/BokyDojo" rel="noopener">BokyDojo source</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/support/">Support</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

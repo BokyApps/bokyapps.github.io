@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BokyApps — free, open-source apps with no ads and no tracking</title>
+<meta name="description" content="BokyApps makes free, open-source, ad-free software: on-device Android apps and self-hostable servers. No ads, no tracking, bring your own key.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="page">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b0f14"/>
+        <g fill="none" stroke="#5fd3c9" stroke-width="5" stroke-linecap="round">
+          <path d="M22 24V16h10"/><path d="M42 40v8H32"/>
+        </g>
+        <rect x="23" y="24" width="18" height="18" rx="4" fill="#5fd3c9"/>
+        <rect x="29" y="30" width="6" height="6" rx="1.5" fill="#0b0f14"/>
+      </svg>
+      <span>BokyApps</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <h1>Free, open-source software that keeps your data yours.</h1>
+    <p class="lede">
+      BokyApps is a small family of apps built by Sarel Myburgh. Every one of them is free
+      and open source under a recognised licence. There are no ads, no subscriptions,
+      no tracking SDKs and no Boky-operated cloud backend — because there is nothing
+      behind the app that needs your data.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#apps">Browse the apps</a>
+      <a class="btn" href="/privacy/">Read the privacy policy</a>
+      <a class="btn" href="/support/">Support the creators</a>
+    </div>
+
+    <h2 id="ethos">The Boky ethos</h2>
+    <ul class="checklist">
+      <li><strong>Free.</strong> No ads, no in-app purchases to unlock features, no upsells.</li>
+      <li><strong>Open source.</strong> The source is public, and the code — not just the marketing — is the authoritative description of what the app does.</li>
+      <li><strong>Secure by default.</strong> On-device processing wherever possible, and when a service is needed you bring your own API key.</li>
+      <li><strong>Bring your own key.</strong> We do not proxy your requests through our infrastructure. Your key talks to the provider you chose.</li>
+      <li><strong>No analytics.</strong> No telemetry, no crash reporters, no advertising identifiers, no fingerprinting.</li>
+      <li><strong>Self-hostable.</strong> The server apps ship as Docker Compose stacks you run yourself. Your data lives on your machine.</li>
+    </ul>
+
+    <h2 id="apps">Apps</h2>
+    <p class="muted">
+      Four apps so far: two Android apps that work offline and on-device, and two
+      self-hostable servers you run yourself.
+    </p>
+
+    <div class="card-grid">
+      <a class="card" href="/apps/bokyqr/">
+        <span class="pill">Android</span>
+        <h3>BokyQR</h3>
+        <p>Offline-first QR and barcode scanner. Bring your own key.
+           Camera frames are decoded on the device; reputation checks only happen
+           when you tap them.</p>
+        <p class="meta">Apache-2.0</p>
+      </a>
+
+      <a class="card" href="/apps/bokylearn/">
+        <span class="pill">Android</span>
+        <h3>BokyLearn</h3>
+        <p>Fun-fact doom-scrolling learning app. Short facts, AI expansions and
+           follow-ups from the provider you choose.</p>
+        <p class="meta">Flutter</p>
+      </a>
+
+      <a class="card" href="/apps/bokydo/">
+        <span class="pill">Self-hosted</span>
+        <h3>BokyDo</h3>
+        <p>Self-hosted, Todoist-style task manager. Natural-language quick add,
+           projects, boards, filters, collaboration and a REST API + MCP server.</p>
+        <p class="meta">AGPL-3.0</p>
+      </a>
+
+      <a class="card" href="/apps/bokydojo/">
+        <span class="pill">Self-hosted</span>
+        <h3>BokyDojo</h3>
+        <p>Student Information System for dojos and martial arts clubs.
+           Multi-dojo attendance, ranking, scheduling, billing and a parent portal.</p>
+        <p class="meta">AGPL-3.0</p>
+      </a>
+    </div>
+
+    <h2>Where the code lives</h2>
+    <p>
+      These apps are developed under
+      <a href="https://github.com/sarel-myburgh" rel="noopener">github.com/sarel-myburgh</a>.
+      This site is published from the
+      <a href="https://github.com/BokyApps/bokyapps.github.io" rel="noopener">BokyApps organisation</a>,
+      which currently holds only the Pages repository.
+    </p>
+
+    <div class="note">
+      <h3>No store, no middleman</h3>
+      <p class="small">
+        BokyQR and BokyLearn are distributed as builds from their own GitHub release
+        pages (and F-Droid listings when they exist), not through a store account that
+        we control. BokyDo and BokyDojo are self-hosted servers. Wherever a store
+        listing has not been created yet, we say so plainly instead of linking to a
+        page that does not exist.
+      </p>
+    </div>
+
+    <h2>Privacy, in one page</h2>
+    <p>
+      All Boky apps share a single privacy policy, published at
+      <a href="/privacy/">/privacy/</a>. That page is the canonical hosted version;
+      the <code>PRIVACY.md</code> files inside individual app repositories may mirror
+      it. The short version: nothing is collected from you, because there is no
+      service collecting it.
+    </p>
+    <p class="small muted">
+      This site itself sets no cookies, runs no analytics, loads no third-party
+      fonts, scripts or images, and is served as static files.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      BokyApps &middot; free and open-source software by Sarel Myburgh &middot;
+      Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache-2.0</a> (this site).
+    </p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#apps">Apps</a></li>
+      <li><a href="/privacy/">Privacy</a></li>
+      <li><a href="/support/">Support</a></li>
+      <li><a href="https://github.com/BokyApps" rel="noopener">GitHub organisation</a></li>
+      <li><a href="https://github.com/sarel-myburgh" rel="noopener">Author</a></li>
+    </ul>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

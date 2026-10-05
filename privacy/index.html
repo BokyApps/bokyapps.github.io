@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — BokyApps</title>
+<meta name="description" content="The single privacy policy for all Boky apps: BokyQR, BokyDo, BokyLearn and BokyDojo. No ads, no tracking, no Boky-operated cloud backend.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://bokyapps.github.io/privacy/">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="page">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#0b0f14"/>
+        <g fill="none" stroke="#5fd3c9" stroke-width="5" stroke-linecap="round">
+          <path d="M22 24V16h10"/><path d="M42 40v8H32"/>
+        </g>
+        <rect x="23" y="24" width="18" height="18" rx="4" fill="#5fd3c9"/>
+        <rect x="29" y="30" width="6" height="6" rx="1.5" fill="#0b0f14"/>
+      </svg>
+      <span>BokyApps</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/privacy/" aria-current="page">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <h1>BokyApps privacy policy</h1>
+    <p class="lede">Last updated: 5 October 2026.</p>
+
+    <div class="note">
+      <p class="small">
+        <strong>This page is the canonical hosted version of the Boky privacy policy</strong>
+        for the whole app family. Individual app repositories may contain a
+        <code>PRIVACY.md</code> file that mirrors this text; where they differ, this page is
+        the version to rely on, and the application's own source code remains the
+        authoritative statement of what it does.
+      </p>
+    </div>
+
+    <h2 id="intro">The short version</h2>
+    <p>
+      Boky apps are free, open-source software. We do not put ads in them and we do not put
+      tracking SDKs in them. Most of them either do their work entirely on your own device,
+      or run on a server that <em>you</em> operate. There is no Boky-operated cloud backend
+      that quietly collects anything about the people who use these apps.
+    </p>
+    <p>
+      This policy covers all Boky apps at once. Each app has its own section below, because
+      the honest answer differs between a QR scanner and a self-hosted school database.
+    </p>
+
+    <h2 id="who-we-are">Who "we" means</h2>
+    <p>
+      "We", "us" and "Boky" mean <strong>Sarel Myburgh</strong>, working through the
+      <a href="https://github.com/BokyApps" rel="noopener">BokyApps</a> GitHub organisation.
+      There is no separate company behind this, and no operations team. When an app is
+      self-hosted, the relevant operator is the person or organisation running that
+      instance &mdash; which, for a self-hosted app, is you.
+    </p>
+    <p>
+      We do not operate a shared analytics backend. There is no account system, no sign-in,
+      no telemetry endpoint and no crash-reporting service operated by BokyApps.
+    </p>
+    <p class="small">
+      This website itself is a set of static files. It sets no cookies, embeds no
+      third-party fonts, scripts, images or frames, and records no visitor analytics.
+    </p>
+
+    <h2 id="general">How the apps generally handle data</h2>
+    <ul class="checklist">
+      <li><strong>On-device apps</strong> process your content locally. Data leaves the device only when you take an action that requires a network call &mdash; and those actions come with your own key.</li>
+      <li><strong>Self-hosted apps</strong> store everything on the instance you operate. You are the operator, and the applicable data-protection obligations for that instance are yours.</li>
+      <li><strong>Bring your own key.</strong> Where an app uses an AI or data provider, you supply the API key yourself. Your requests go directly from your device or your server to that provider. We do not proxy them, and we never see them.</li>
+    </ul>
+
+    <h2 id="bokyqr">BokyQR</h2>
+    <p>
+      <a href="https://github.com/sarel-myburgh/BokyQR" rel="noopener">BokyQR</a> is an
+      offline-first Android QR and barcode scanner. This section paraphrases the app's
+      repository privacy policy.
+    </p>
+    <p>
+      <strong>BokyQR scans, it does not browse.</strong> The camera is the only thing that
+      happens by default, and nothing it sees is stored, uploaded or logged. The only way
+      any data leaves the device is if you tap a reputation check &mdash; and each check
+      tells you exactly what it is about to send before it sends it.
+    </p>
+
+    <h3>Camera frames stay on the device</h3>
+    <ul>
+      <li>Camera frames are decoded by a barcode model running <strong>on the device</strong>. The <code>play</code> flavour bundles that model inside the APK (ML Kit); the <code>fdroid</code> flavour uses ZXing, which is pure computation.</li>
+      <li>No frame, thumbnail, cropped code or decoded payload is written to disk, sent over the network, or handed to any analytics or crash-reporting service. <strong>The app contains no analytics and no crash reporter of any kind.</strong></li>
+      <li>Nothing is recorded in provider logs either: the app's HTTP layer never logs a request URL, header, body or response body.</li>
+    </ul>
+
+    <h3>Photo picker</h3>
+    <ul>
+      <li>If you enable "Import QR from gallery", BokyQR opens the <strong>Android system photo picker</strong> and reads only the single image you pick.</li>
+      <li>The app requests <strong>no</strong> photo, media or storage permission of any kind. It never sees the rest of your library and cannot browse it.</li>
+      <li>The image is decoded in memory, used once and released. It is not copied anywhere.</li>
+      <li>Turn the setting off and the gallery button disappears; the app still cannot open the picker.</li>
+    </ul>
+
+    <h3>Your API keys</h3>
+    <ul>
+      <li>BokyQR <strong>ships no key</strong>: no VirusTotal key, no urlscan.io key, no URLhaus Auth-Key, no shared key, no proxy, no demo key. Reputation checks do not run without a key you supply yourself.</li>
+      <li>Keys you paste in Settings are stored in <code>EncryptedSharedPreferences</code>, encrypted with an <code>AES256_GCM</code> master key held in the <strong>Android Keystore</strong>. Neither the app nor anyone with a copy of the data directory can read them back without that key.</li>
+      <li><code>android:allowBackup</code> is <code>false</code>, and the encrypted file is explicitly excluded from cloud backup and device-to-device transfer. <strong>A key never leaves the device through a backup.</strong></li>
+      <li>A key is written only to the one provider it belongs to, over HTTPS, at the moment you tap that provider. It is never sent to any other host, and never logged.</li>
+      <li>Clearing the field clears the key. Uninstalling the app removes it.</li>
+    </ul>
+
+    <h3>What happens when you tap a reputation check</h3>
+    <p>
+      None of this is automatic. A check does not run on scan, on app start, or on a
+      schedule. It runs when you tap its button, and the first time you do, a dialog states
+      what is about to be sent. When you tap one of the three providers, the following is
+      transmitted:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <caption>What each reputation provider receives, if you choose to tap it.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Provider</th>
+            <th scope="col">Sent</th>
+            <th scope="col">Your key used as</th>
+            <th scope="col">What it does with it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>VirusTotal</strong></td>
+            <td>the full scanned URL</td>
+            <td><code>x-apikey</code> header</td>
+            <td>Looks the URL up in its report store; if unknown, submits it for analysis and polls for the verdict.</td>
+          </tr>
+          <tr>
+            <td><strong>urlscan.io</strong></td>
+            <td>the full scanned URL</td>
+            <td><code>API-Key</code> header</td>
+            <td>Submits the URL to be fetched by <strong>urlscan's own servers</strong> in a sandbox, always with <code>visibility: unlisted</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>URLhaus</strong></td>
+            <td>the full scanned URL</td>
+            <td><code>Auth-Key</code> header</td>
+            <td>Asks whether this exact URL is already on the URLhaus malware blocklist. It is a lookup, not a scan.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Consequences worth stating plainly:</p>
+    <ul>
+      <li><strong>The full URL leaves your phone.</strong> If the code contains a token, an identifier or a share-link path, that goes with it.</li>
+      <li><strong>Your provider key is sent to that provider</strong>, and to nowhere else. The three are separate keys and are never cross-sent.</li>
+      <li><strong>urlscan.io fetches the URL from its own infrastructure</strong>, not from your phone, and keeps the result on its servers according to its own terms and retention policy. Scans are submitted as <code>unlisted</code>, never <code>public</code>, but unlisted scans are still visible to urlscan Pro researchers.</li>
+      <li><strong>URLhaus and VirusTotal results are shared with their operators</strong>, and a URL you submit to URLhaus becomes part of a blocklist others download.</li>
+      <li>All three calls are <strong>HTTPS</strong>, so the URL and key are encrypted in transit.</li>
+    </ul>
+
+    <h4>Things BokyQR never does with these checks</h4>
+    <ul>
+      <li>It never fetches the scanned URL itself. Its HTTP layer only ever talks to the three provider API hosts.</li>
+      <li>It never sends anything about another URL, your history, your device, or your account.</li>
+      <li>It never sends anything automatically, in the background, on a timer, or at app start.</li>
+      <li>It never stores the URL, a scan id, or any provider response. Provider results live in memory for as long as the result sheet is open and are gone when you dismiss it.</li>
+    </ul>
+
+    <h3>What is stored on the device</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">What</th><th scope="col">Where</th><th scope="col">Lifetime</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Your provider keys</td>
+            <td><code>EncryptedSharedPreferences</code>, Keystore-encrypted</td>
+            <td>Until you clear the field or uninstall</td>
+          </tr>
+          <tr>
+            <td>"Gallery import on/off"</td>
+            <td>plain <code>SharedPreferences</code></td>
+            <td>Until you change it</td>
+          </tr>
+          <tr>
+            <td>"I accepted the disclosure for provider X"</td>
+            <td>plain <code>SharedPreferences</code></td>
+            <td>Until you uninstall</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The disclosure flags record <em>that</em> you accepted a dialog. They never record the
+      URL that prompted it, so re-opening the app cannot tell anyone what you scanned.
+    </p>
+    <p>There is no database, no cache directory, no log file and no analytics store.</p>
+
+    <h3>Network and transport security</h3>
+    <ul>
+      <li>Cleartext HTTP is refused outright (<code>android:usesCleartextTraffic="false"</code> plus a network security config that permits no cleartext).</li>
+      <li>Release builds trust <strong>system certificate authorities only</strong>. No certificate pinning is used.</li>
+      <li><strong>Debug builds additionally trust user-installed CAs</strong> so a proxy can inspect traffic during development. Debug builds are for development only and are never distributed or uploaded. The shipped configuration is asserted at build time: a release build fails if the trusted-anchors file ever gains a user anchor or permits cleartext.</li>
+    </ul>
+
+    <h3>BokyQR permissions</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Permission</th><th scope="col">Why</th><th scope="col">When</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CAMERA</code></td>
+            <td>To scan a QR code.</td>
+            <td>Requested once on first launch. Nothing else uses it.</td>
+          </tr>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>To reach the three reputation APIs you tap.</td>
+            <td>Only used while a check you started is running.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">
+      No photo, media, storage, location, contacts, microphone, IMEI or advertising identifier
+      is requested. No identifier of any kind is collected.
+    </p>
+
+    <h3>Screen capture and children</h3>
+    <ul>
+      <li><strong>Screen capture.</strong> The Settings screen and the result sheet set <code>FLAG_SECURE</code>, so API keys and scanned payloads do not appear in screenshots, screen recordings or the recent-apps thumbnail.</li>
+      <li><strong>Children.</strong> BokyQR is not directed at children and collects nothing from anyone, of any age.</li>
+    </ul>
+
+    <h2 id="bokylearn">BokyLearn</h2>
+    <p>
+      <a href="https://github.com/sarel-myburgh/bokylearn" rel="noopener">BokyLearn</a> is a
+      Flutter app that shows short facts and lets you ask for AI expansions and follow-ups.
+    </p>
+    <ul>
+      <li><strong>Keys in secure storage.</strong> AI API keys are stored in the platform's secure storage (Keystore-backed on Android), not in plain preferences. Clearing the app's data or uninstalling removes them.</li>
+      <li><strong>You choose the provider.</strong> Requests go only to the AI provider you selected &mdash; OpenAI, OpenRouter, Anthropic, Gemini, Ollama (cloud or local), or OpenCode Go &mdash; authenticated with your own key. BokyApps does not proxy, log or copy them. The provider's own privacy policy governs that request.</li>
+      <li><strong>Local data.</strong> The fact cache, your bookmarks and your interest filters are stored locally on the device and are not uploaded to us.</li>
+      <li><strong>No Boky analytics.</strong> BokyLearn runs no Boky-operated analytics, telemetry or crash reporting.</li>
+      <li><strong>Self-hosting the provider.</strong> If you point BokyLearn at a local Ollama instance, those requests do not leave your machine at all.</li>
+    </ul>
+
+    <h2 id="bokydo">BokyDo</h2>
+    <p>
+      <a href="https://github.com/sarel-myburgh/BokyDo" rel="noopener">BokyDo</a> is a
+      self-hosted, Todoist-style task manager.
+    </p>
+    <ul>
+      <li><strong>You run the server.</strong> BokyDo is deployed with Docker Compose on hardware or infrastructure you control. <strong>Your task data stays on your instance.</strong></li>
+      <li><strong>You are the operator.</strong> Because you operate the instance, you decide what it stores, who has an account on it, how it is backed up, and how long you keep anything. Those obligations are yours, not ours.</li>
+      <li><strong>No Boky cloud collection.</strong> There is no Boky-operated backend, and BokyApps receives no copy of your tasks, accounts or usage.</li>
+      <li><strong>Optional AI features.</strong> If you enable bring-your-own-key AI, requests go from your server to the provider you configured, using your key. We are not a party to those requests.</li>
+      <li><strong>No Boky analytics.</strong> The project does not include Boky-operated telemetry.</li>
+    </ul>
+
+    <h2 id="bokydojo">BokyDojo</h2>
+    <p>
+      <a href="https://github.com/sarel-myburgh/BokyDojo" rel="noopener">BokyDojo</a> is a
+      self-hostable Student Information System for dojos and martial arts clubs.
+    </p>
+    <ul>
+      <li><strong>Self-hosted.</strong> Student, parent, attendance, ranking and billing records stay on the instance operated by the club or organisation running BokyDojo.</li>
+      <li><strong>The operator is in control.</strong> You deploy it with Docker Compose, you hold the database, and you decide who (students, parents, instructors, staff) can see what. As the operator of a system holding children's personal information, securing and backing it up is your responsibility.</li>
+      <li><strong>No Boky cloud collection.</strong> There is no Boky-operated cloud copy of an instance, and no Boky-operated analytics.</li>
+      <li><strong>Offline queue.</strong> The PWA's offline attendance queue stores check-ins locally until it can sync them to your own instance &mdash; not to us.</li>
+    </ul>
+
+    <h2 id="third-parties">Third parties</h2>
+    <p>
+      BokyApps has no advertising, no attribution, no analytics and no tracking SDKs. The
+      only third parties that can ever see anything are the ones <strong>you or your
+      operator choose</strong>:
+    </p>
+    <ul>
+      <li><strong>Reputation providers</strong> &mdash; VirusTotal, urlscan.io, URLhaus &mdash; only in BokyQR, and only after you tap one and accept the disclosure.</li>
+      <li><strong>AI providers</strong> &mdash; OpenAI, OpenRouter, Anthropic, Gemini, Ollama, OpenCode Go and any similar provider &mdash; only in apps with AI features, only with your key, and only to the endpoint you configured.</li>
+      <li><strong>Reference sources</strong> &mdash; for example Wikipedia grounding in BokyLearn, where available.</li>
+      <li><strong>Your own infrastructure providers</strong> &mdash; host, container registry, database and email providers used by whoever runs a self-hosted BokyDo or BokyDojo instance.</li>
+    </ul>
+    <p>
+      For each of these, the provider's own terms and privacy policy apply to what you send
+      them. We have no visibility into it, and no way to correct it on your behalf.
+    </p>
+
+    <h2 id="children">Children</h2>
+    <p>
+      The Boky apps are not directed at children. BokyQR, for example, collects nothing from
+      anyone of any age. BokyDojo <em>will</em> be used by operators who have a legal
+      relationship with children, which makes those operators the controllers of that data
+      &mdash; not BokyApps. If you are a parent with a question about a BokyDojo instance
+      operated by your child's club, please contact that operator first.
+    </p>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>
+      This document changes with the apps. The source of this page, and its full history,
+      is in the <a href="https://github.com/BokyApps/bokyapps.github.io" rel="noopener">BokyApps
+      Pages repository</a>. The applications' own source code is the authoritative statement
+      of what they do: if the code and this page ever disagree, believe the code, and please
+      let us know so this page can be corrected.
+    </p>
+    <p>
+      <code>PRIVACY.md</code> files inside individual app repositories may mirror this page.
+      They exist so the policy travels with the source. Those copies are expected to point
+      back here; this page at <code>https://bokyapps.github.io/privacy/</code> is the
+      canonical hosted version.
+    </p>
+
+    <h2 id="contact">Contact</h2>
+    <p>
+      Questions, corrections or a privacy concern:
+      <span class="placeholder">[PLACEHOLDER: contact email]</span>
+    </p>
+    <p>
+      You can also raise a public issue, which is often the fastest route:
+    </p>
+    <ul>
+      <li><a href="https://github.com/BokyApps" rel="noopener">github.com/BokyApps</a> &mdash; the organisation</li>
+      <li><a href="https://github.com/sarel-myburgh" rel="noopener">github.com/sarel-myburgh</a> &mdash; the developer</li>
+      <li>Security reports: use the repository's private vulnerability reporting channel where available, rather than a public issue.</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      BokyApps &middot; free and open-source software by Sarel Myburgh &middot;
+      Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache-2.0</a> (this site).
+    </p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#apps">Apps</a></li>
+      <li><a href="/privacy/" aria-current="page">Privacy</a></li>
+      <li><a href="/support/">Support</a></li>
+    </ul>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
