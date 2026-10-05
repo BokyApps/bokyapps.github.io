@@ -57,7 +57,7 @@ URLs redirect to the matching `github.com/BokyApps/<app>` repository.
 | App | Repository | Licence | Distribution |
 | --- | --- | --- | --- |
 | BokyQR | https://github.com/BokyApps/BokyQR | Apache-2.0 | Android — GitHub releases; F-Droid and Play listings "coming soon" |
-| BokyLearn | https://github.com/BokyApps/bokylearn | not declared in the repository — the page says "see repository" | Android — GitHub releases; F-Droid and Play listings "coming soon" |
+| BokyLearn | https://github.com/BokyApps/BokyLearn | not declared in the repository — the page says "see repository" | Android — GitHub releases; F-Droid and Play listings "coming soon" |
 | BokyDo | https://github.com/BokyApps/BokyDo | AGPL-3.0 | Self-hosted server (Docker Compose); Android app planned later |
 | BokyDojo | https://github.com/BokyApps/BokyDojo | AGPL-3.0 | Self-hosted web app (Docker Compose) |
 
@@ -69,9 +69,13 @@ The site deliberately contains **marked placeholders** rather than invented valu
 put a guessed store URL, crypto address, payment handle, email address or phone number
 into this repository. Fill in a real value, or leave the placeholder.
 
+Filled:
+
+* `support/index.html` — Ko-fi: https://ko-fi.com/bokyapps
+
 Current placeholders:
 
-* `support/index.html` — GitHub Sponsors URL, Ko-fi / Buy Me a Coffee URL, BTC address,
+* `support/index.html` — GitHub Sponsors URL, BTC address,
   Lightning address or LNURL, XMR address, ETH/USDC address.
 * `privacy/index.html` — `[PLACEHOLDER: contact email]`.
 * `support/index.html` — `[PLACEHOLDER: contact email]`.
