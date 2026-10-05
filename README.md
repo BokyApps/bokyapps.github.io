@@ -6,8 +6,8 @@ Source for the BokyApps website, published with GitHub Pages at:
 
 This is the org user/organization site for the
 [BokyApps](https://github.com/BokyApps) GitHub organisation. It is not an app
-repository — the apps themselves live under
-[sarel-myburgh](https://github.com/sarel-myburgh) (see below).
+repository — the apps live under the
+[BokyApps](https://github.com/BokyApps) organisation.
 
 ---
 
@@ -51,16 +51,15 @@ differ, this page is the version to rely on. If you update one, update the other
 
 ## The apps
 
-These apps are developed under the `sarel-myburgh` GitHub account. They have **not** been
-transferred to the `BokyApps` organisation, so this site links across to them rather than
-to `github.com/BokyApps/*`.
+These apps live in the `BokyApps` GitHub organisation. Old `github.com/sarel-myburgh/<app>`
+URLs redirect to the matching `github.com/BokyApps/<app>` repository.
 
 | App | Repository | Licence | Distribution |
 | --- | --- | --- | --- |
-| BokyQR | https://github.com/sarel-myburgh/BokyQR | Apache-2.0 | Android — GitHub releases; F-Droid and Play listings "coming soon" |
-| BokyLearn | https://github.com/sarel-myburgh/bokylearn | not declared in the repository — the page says "see repository" | Android — GitHub releases; F-Droid and Play listings "coming soon" |
-| BokyDo | https://github.com/sarel-myburgh/BokyDo | AGPL-3.0 | Self-hosted server (Docker Compose); Android app planned later |
-| BokyDojo | https://github.com/sarel-myburgh/BokyDojo | AGPL-3.0 | Self-hosted web app (Docker Compose) |
+| BokyQR | https://github.com/BokyApps/BokyQR | Apache-2.0 | Android — GitHub releases; F-Droid and Play listings "coming soon" |
+| BokyLearn | https://github.com/BokyApps/bokylearn | not declared in the repository — the page says "see repository" | Android — GitHub releases; F-Droid and Play listings "coming soon" |
+| BokyDo | https://github.com/BokyApps/BokyDo | AGPL-3.0 | Self-hosted server (Docker Compose); Android app planned later |
+| BokyDojo | https://github.com/BokyApps/BokyDojo | AGPL-3.0 | Self-hosted web app (Docker Compose) |
 
 ---
 
