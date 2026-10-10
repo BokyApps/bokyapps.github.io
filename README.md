@@ -51,8 +51,7 @@ differ, this page is the version to rely on. If you update one, update the other
 
 ## The apps
 
-These apps live in the `BokyApps` GitHub organisation. Old `github.com/sarel-myburgh/<app>`
-URLs redirect to the matching `github.com/BokyApps/<app>` repository.
+These apps live in the `BokyApps` GitHub organisation. Each app has its own `github.com/BokyApps/<app>` repository.
 
 | App | Repository | Licence | Distribution |
 | --- | --- | --- | --- |
@@ -78,7 +77,7 @@ Filled:
 
 Hidden (HTML comments, not shown publicly):
 
-* `support/index.html` — GitHub Sponsors slot (re-enable when Sarel confirms; candidate `github.com/sponsors/BokyApps`).
+* `support/index.html` — GitHub Sponsors slot (re-enable when the maintainers confirm; candidate `github.com/sponsors/BokyApps`).
 
 Public support methods: Ko-fi, BTC, Base ETH/USDC, Solana. Lightning and Monero removed.
 
